@@ -5,6 +5,7 @@ def solution(arr):
     while e < len(arr):
         if arr[e] == arr[i] + 1: 
             counter += 1; i += 1; e += 1; 
+            continue
         else:
             if counter >= 3: 
                 res += f"{s}-{i}"; 
@@ -12,8 +13,9 @@ def solution(arr):
                 continue 
             else: 
                 res += f",{s}" 
-                res += f",{e}" 
+                res += f",{i}" 
                 counter = 1; i += 1; e += 1; s = i; 
+                continue
     return res 
 
 
